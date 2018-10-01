@@ -1,18 +1,23 @@
 package classes;
 
-import java.sql.Date;
-
 public class Motorista {
 	
 	private int id_motorista;
 	private String nome;
-	private Date nascimento;
+	private String nascimento;
 	private String endereco;
 	private char tipo_cnh;
 	private String numero_cnh;
 	
-	public Motorista() {
-		
+	public Motorista(int id_motorista, String nome, String nascimento, String endereco, char tipo_cnh,
+			String numero_cnh) {
+		super();
+		this.id_motorista = id_motorista;
+		this.nome = nome;
+		this.nascimento = nascimento;
+		this.endereco = endereco;
+		this.tipo_cnh = tipo_cnh;
+		this.numero_cnh = numero_cnh;
 	}
 
 	public int getId_motorista() {
@@ -31,11 +36,11 @@ public class Motorista {
 		this.nome = nome;
 	}
 
-	public Date getNascimento() {
+	public String getNascimento() {
 		return nascimento;
 	}
 
-	public void setNascimento(Date nascimento) {
+	public void setNascimento(String nascimento) {
 		this.nascimento = nascimento;
 	}
 
