@@ -67,4 +67,11 @@ public class Motorista {
 	public void setNumero_cnh(String numero_cnh) {
 		this.numero_cnh = numero_cnh;
 	}
+
+	@Override
+	public String toString() {
+		return "Motorista [id_motorista=" + id_motorista + ", nome=" + nome + ", nascimento=" + nascimento
+				+ ", endereco=" + endereco + ", tipo_cnh=" + tipo_cnh + ", numero_cnh=" + numero_cnh + "]";
+	}
+
 }
