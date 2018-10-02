@@ -1,7 +1,5 @@
 package classes;
 
-import java.sql.Date;
-
 public class Objeto {
 	
 	private int id_objeto;
@@ -9,7 +7,7 @@ public class Objeto {
 	private String endereco_remetente;
 	private String none_destinatario;
 	private String endereco_destinatario;
-	private Date data_postagem;
+	private String data_postagem;
 	private double peso;
 	//private String codigo_localizador;
 	
@@ -57,11 +55,11 @@ public class Objeto {
 		this.endereco_destinatario = endereco_destinatario;
 	}
 
-	public Date getData_postagem() {
+	public String getData_postagem() {
 		return data_postagem;
 	}
 
-	public void setData_postagem(Date data_postagem) {
+	public void setData_postagem(String data_postagem) {
 		this.data_postagem = data_postagem;
 	}
 
