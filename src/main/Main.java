@@ -6,11 +6,13 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import classes.Motorista;
+import classes.Veiculo;
 
 public class Main {
 
 	public static void main(String[] args) {
 		List<Motorista> listaMotorista = new ArrayList<>();
+		List<Veiculo> listaVeiculo = new ArrayList<>();
 		int opcao;
 		int teste = 0;
 		boolean continua = true;
@@ -40,10 +42,20 @@ public class Main {
 				motorista.setEndereco(JOptionPane.showInputDialog(null, "Digite o endereço do motorista"));
 				motorista.setTipo_cnh(JOptionPane.showInputDialog(null, "Digite o tipo da Cnh do motorista"));
 				motorista.setNumero_cnh(JOptionPane.showInputDialog(null, " Digite o numero da Cnh do motorista"));
+				listaMotorista.add(motorista);
 				System.out.println(motorista.toString());
 				break;
 			case 2:
 				//cadastro de veiculo
+				Veiculo veiculo;
+				veiculo = new Veiculo();
+				veiculo.setAno(Integer.parseInt(JOptionPane.showInputDialog("Digite o ano do carro")));
+				veiculo.setMarca(JOptionPane.showInputDialog("Digite a marca"));
+				veiculo.setModelo(JOptionPane.showInputDialog("Digite o modelo"));
+				veiculo.setPlaca(JOptionPane.showInputDialog("Digite o Placa"));
+				veiculo.setTipo(JOptionPane.showInputDialog("Digite o Tipo: (1 - Van | 2 - Caminhão Baú | 3 - Carreta)"));
+				listaVeiculo.add(veiculo);
+				System.out.println(veiculo.toString());
 				break;
 			case 3:
 				//cadastra os objetos
