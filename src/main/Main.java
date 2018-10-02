@@ -3,10 +3,13 @@ package main;
 import javax.swing.JOptionPane;
 
 import classes.Motorista;
+import classes.Veiculo;
 
 public class Main {
 
 	public static void main(String[] args) {
+		
+		Veiculo veiculo = new Veiculo();
 		
 		int opcao;
 		boolean continua = true;
@@ -31,6 +34,13 @@ public class Main {
 				break;
 			case 2:
 				//cadastro de veiculo
+				veiculo.setAno(Integer.parseInt(JOptionPane.showInputDialog("Digite o ano do carro")));
+				veiculo.setMarca(JOptionPane.showInputDialog("Digite a marca"));
+				veiculo.setModelo(JOptionPane.showInputDialog("Digite o modelo"));
+				veiculo.setPlaca(JOptionPane.showInputDialog("Digite o Placa"));
+				veiculo.setTipo(JOptionPane.showInputDialog("Digite o Tipo: (1 - Van | 2 - Caminhão Baú | 3 - Carreta)"));
+				
+				veiculo.cadastroVeiculo(veiculo);
 				break;
 			case 3:
 				//cadastra os objetos
