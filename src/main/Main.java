@@ -1,5 +1,8 @@
 package main;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.JOptionPane;
 
 import classes.Motorista;
@@ -7,11 +10,12 @@ import classes.Motorista;
 public class Main {
 
 	public static void main(String[] args) {
-		
+		List<Motorista> listaMotorista = new ArrayList<>();
 		int opcao;
+		int teste = 0;
 		boolean continua = true;
 		while (continua) {
-
+			
 			opcao = Integer
 					.parseInt(JOptionPane
 							.showInputDialog(
@@ -25,9 +29,18 @@ public class Main {
 								  + "7)Sair"));
 			switch (opcao) {
 			case 1:
+				teste++;
 				//cadastrar o motorista
-				Motorista motorista = new Motorista(id_motorista, nome, nascimento, endereco, tipo_cnh, numero_cnh);
-				
+				Motorista motorista;
+				motorista = new Motorista();
+				motorista.setId_motorista(teste);
+				motorista.setNome(JOptionPane.showInputDialog(null, "Digite o nome do motorista"));;
+//				(id_motorista, nome, nascimento, endereco, tipo_cnh, numero_cnh);
+				motorista.setNascimento(JOptionPane.showInputDialog(null, "Digite a data de nascimento do motorista"));
+				motorista.setEndereco(JOptionPane.showInputDialog(null, "Digite o endereço do motorista"));
+				motorista.setTipo_cnh(JOptionPane.showInputDialog(null, "Digite o tipo da Cnh do motorista"));
+				motorista.setNumero_cnh(JOptionPane.showInputDialog(null, " Digite o numero da Cnh do motorista"));
+				System.out.println(motorista.toString());
 				break;
 			case 2:
 				//cadastro de veiculo
