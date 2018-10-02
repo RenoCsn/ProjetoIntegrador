@@ -11,8 +11,14 @@ import classes.Veiculo;
 public class Main {
 
 	public static void main(String[] args) {
+<<<<<<< HEAD
 		List<Motorista> listaMotorista = new ArrayList<>();
 		List<Veiculo> listaVeiculo = new ArrayList<>();
+=======
+		
+		Veiculo veiculo = new Veiculo();
+		
+>>>>>>> b19f739e4cd021b08cac4edce15a3e501ea8fdae
 		int opcao;
 		int teste = 0;
 		boolean continua = true;
@@ -47,15 +53,23 @@ public class Main {
 				break;
 			case 2:
 				//cadastro de veiculo
+<<<<<<< HEAD
 				Veiculo veiculo;
 				veiculo = new Veiculo();
+=======
+>>>>>>> b19f739e4cd021b08cac4edce15a3e501ea8fdae
 				veiculo.setAno(Integer.parseInt(JOptionPane.showInputDialog("Digite o ano do carro")));
 				veiculo.setMarca(JOptionPane.showInputDialog("Digite a marca"));
 				veiculo.setModelo(JOptionPane.showInputDialog("Digite o modelo"));
 				veiculo.setPlaca(JOptionPane.showInputDialog("Digite o Placa"));
 				veiculo.setTipo(JOptionPane.showInputDialog("Digite o Tipo: (1 - Van | 2 - Caminhão Baú | 3 - Carreta)"));
+<<<<<<< HEAD
 				listaVeiculo.add(veiculo);
 				System.out.println(veiculo.toString());
+=======
+				
+				veiculo.cadastroVeiculo(veiculo);
+>>>>>>> b19f739e4cd021b08cac4edce15a3e501ea8fdae
 				break;
 			case 3:
 				//cadastra os objetos

@@ -1,10 +1,14 @@
 package classes;
 
+import java.awt.List;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import javax.swing.JOptionPane;
 
 public class Veiculo {
 	
@@ -66,26 +70,30 @@ public class Veiculo {
 	public void setPlaca(String placa) {
 		this.placa = placa;
 	}
+	ArrayList<Veiculo> veiculos = new ArrayList();
 	
-	public void cadastro(Veiculo veiculos) {
+	public void cadastroVeiculo(Veiculo v) {
 		
-		try {
-			
-			FileWriter fw = new FileWriter("veiculos.txt",true);
-			PrintWriter pw = new PrintWriter(fw);
-			pw.println("Tipo: "+this.tipo);
-			pw.println("Marca: "+this.marca);
-			pw.println("Modelo: "+this.modelo);
-			pw.println("Ano: "+this.ano);
-			pw.println("Placa: "+this.placa);
-			
-			pw.flush();
-			pw.close();
-			fw.close();
-			
-			
-		} catch (IOException ex) {
-			Logger.getLogger(Veiculo.class.getName()).log(Level.SEVERE, null, ex);
+		v.setTipo(this.tipo);
+		v.setPlaca(this.placa);
+		v.setModelo(this.modelo);
+		v.setAno(this.ano);
+		v.setMarca(this.marca);
+		
+		veiculos.add(v);
+		
+	}
+	//ARRUMAR BUSCAR VEICULO
+	/*public ArrayList buscarVeiculo() {
+		
+		int n = veiculos.size();
+		for(int i = 0; i<n; i++) {
+			JOptionPane.showMessageDialog(null, veiculos.get(i));
 		}
+		
+		return veiculos;
+	}*/
+	public String toString(){
+		return "Placa:"+ this.placa;
 	}
 }
