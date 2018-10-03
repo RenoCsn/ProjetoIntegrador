@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+
 public class Roteiro {
   
   private Long codigo;
@@ -13,7 +14,7 @@ public class Roteiro {
 
   private Motorista motorista;
   private Veiculo veiculo;
-  private List<Encomenda> encomendas = new ArrayList<>();
+  private List<Objeto> encomendas = new ArrayList<>();
 
   public Roteiro() {
   }
@@ -73,11 +74,11 @@ public class Roteiro {
     this.veiculo = veiculo;
   }
 
-  public List<Encomenda> getEncomendas() {
+  public List<Objeto> getEncomendas() {
     return encomendas;
   }
 
-  public void setEncomendas(List<Encomenda> encomendas) {
+  public void setEncomendas(List<Objeto> encomendas) {
     this.encomendas = encomendas;
   }
 
