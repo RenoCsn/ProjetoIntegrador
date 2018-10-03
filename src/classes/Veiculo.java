@@ -1,99 +1,80 @@
 package classes;
 
-import java.awt.List;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.LinkedList;
+import java.util.Queue;
 
-import javax.swing.JOptionPane;
+public abstract class Veiculo {
+  private String marca;
+  private String modelo;
+  private String placa;
+  private Integer ano;
+  private CategoriaCnh cnhMinima;
+  private final Queue<Objeto> carga;
+  private final Integer cargaMax;
+  private Motorista motorista;
 
-public class Veiculo {
-	
-	private int id_veiculo;
-	private String tipo;
-	private String marca;
-	private String modelo;
-	private int ano;
-	private String placa;
-	
-	public Veiculo() {
-		
-	}
+  public Veiculo(Integer qtdPacote) {
+    this.cargaMax = qtdPacote;
+    this.carga = new LinkedList<>();
+  }
 
-	public int getId_veiculo() {
-		return id_veiculo;
-	}
+  public String getMarca() {
+    return marca;
+  }
 
-	public void setId_veiculo(int id_veiculo) {
-		this.id_veiculo = id_veiculo;
-	}
+  public String getModelo() {
+    return modelo;
+  }
 
-	public String getTipo() {
-		return tipo;
-	}
+  public void setModelo(String modelo) {
+    this.modelo = modelo;
+  }
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
+  public String getPlaca() {
+    return placa;
+  }
 
-	public String getMarca() {
-		return marca;
-	}
+  public void setPlaca(String placa) {
+    this.placa = placa;
+  }
 
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
+  public Integer getAno() {
+    return ano;
+  }
 
-	public String getModelo() {
-		return modelo;
-	}
+  public void setAno(Integer ano) {
+    this.ano = ano;
+  }
 
-	public void setModelo(String modelo) {
-		this.modelo = modelo;
-	}
+  public CategoriaCnh getCnhMinima() {
+    return cnhMinima;
+  }
 
-	public int getAno() {
-		return ano;
-	}
+  public void setCnhMinima(CategoriaCnh cnhMinima) {
+    this.cnhMinima = cnhMinima;
+  }
 
-	public void setAno(int ano) {
-		this.ano = ano;
-	}
+  public Motorista getMotorista() {
+    return motorista;
+  }
 
-	public String getPlaca() {
-		return placa;
-	}
+  public void setMotorista(Motorista motorista) {
+    this.motorista = motorista;
+  }
 
-	public void setPlaca(String placa) {
-		this.placa = placa;
-	}
-//	ArrayList<Veiculo> veiculos = new ArrayList();
-//	
-//	public void cadastroVeiculo(Veiculo v) {
-//		
-//		v.setTipo(this.tipo);
-//		v.setPlaca(this.placa);
-//		v.setModelo(this.modelo);
-//		v.setAno(this.ano);
-//		v.setMarca(this.marca);
-//		
-//		veiculos.add(v);
-//		
-//	}
-//	//ARRUMAR BUSCAR VEICULO
-//	/*public ArrayList buscarVeiculo() {
-//		
-//		int n = veiculos.size();
-//		for(int i = 0; i<n; i++) {
-//			JOptionPane.showMessageDialog(null, veiculos.get(i));
-//		}
-//		
-//		return veiculos;
-//	}*/
-//	public String toString(){
-//		return "Placa:"+ this.placa;
-//	}
+  public Queue<Objeto> getCarga() {
+    return carga;
+  }
+  
+  public Objeto getProximaEncomenda() {
+    return this.carga.poll();
+  }
+  
+  public Boolean adicionarEncomenda(Objeto encomenda) {
+    if (this.carga.size() < this.cargaMax) {
+      this.carga.offer(encomenda);
+      return true;
+    }
+    return false;
+  }
 }
