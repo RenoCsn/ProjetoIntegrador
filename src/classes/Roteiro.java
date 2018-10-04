@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Roteiro {
-  
+
 	private String data;
 
 	private Motorista motorista;
@@ -12,45 +12,37 @@ public class Roteiro {
 	List<Objeto> listaObjetos = new ArrayList<>();
 
 	public Roteiro() {
-  }
+	}
 
 	public Roteiro(String data, Motorista motorista, Veiculo veiculo) {
-    this.data = data;
-    this.motorista = motorista;
-    this.veiculo = veiculo;
-  }
-
-	// public Long getCodigo() {
-	// return codigo;
-	// }
-	//
-	// public void setCodigo(Long codigo) {
-	// this.codigo = codigo;
-	// }
+		this.data = data;
+		this.motorista = motorista;
+		this.veiculo = veiculo;
+	}
 
 	public String getData() {
-    return data;
-  }
+		return data;
+	}
 
 	public void setData(String data) {
-    this.data = data;
-  }
-  
-  public Motorista getMotorista() {
-    return motorista;
-  }
+		this.data = data;
+	}
 
-  public void setMotorista(Motorista motorista) {
-    this.motorista = motorista;
-  }
+	public Motorista getMotorista() {
+		return motorista;
+	}
 
-  public Veiculo getVeiculo() {
-    return veiculo;
-  }
+	public void setMotorista(Motorista motorista) {
+		this.motorista = motorista;
+	}
 
-  public void setVeiculo(Veiculo veiculo) {
-    this.veiculo = veiculo;
-  }
+	public Veiculo getVeiculo() {
+		return veiculo;
+	}
+
+	public void setVeiculo(Veiculo veiculo) {
+		this.veiculo = veiculo;
+	}
 
 	public List<Objeto> getListaObjetos() {
 		return listaObjetos;
@@ -61,12 +53,18 @@ public class Roteiro {
 	}
 
 	public Boolean adicionaObjeto(Objeto objeto) {
-	  
-	  if(getVeiculo() != null && listaObjetos != null && listaObjetos.size() < veiculo.getCapacidade()) {
-		  listaObjetos.add(objeto);
-		  return true;
-	  }
-	  return false;
-  }
-  
+
+		if (getVeiculo() != null && listaObjetos != null && listaObjetos.size() < veiculo.getCapacidade()) {
+			listaObjetos.add(objeto);
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public String toString() {
+		return "Roteiro [data=" + data + ", motorista=" + motorista + ", veiculo=" + veiculo + ", listaObjetos="
+				+ listaObjetos + "]";
+	}
+
 }
