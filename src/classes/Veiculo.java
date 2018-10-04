@@ -79,31 +79,4 @@ public class Veiculo {
 		}
 		return 0;
 	}
-
-//	ArrayList<Veiculo> veiculos = new ArrayList();
-//	
-//	public void cadastroVeiculo(Veiculo v) {
-//		
-//		v.setTipo(this.tipo);
-//		v.setPlaca(this.placa);
-//		v.setModelo(this.modelo);
-//		v.setAno(this.ano);
-//		v.setMarca(this.marca);
-//		
-//		veiculos.add(v);
-//		
-//	}
-//	//ARRUMAR BUSCAR VEICULO
-//	/*public ArrayList buscarVeiculo() {
-//		
-//		int n = veiculos.size();
-//		for(int i = 0; i<n; i++) {
-//			JOptionPane.showMessageDialog(null, veiculos.get(i));
-//		}
-//		
-//		return veiculos;
-//	}*/
-//	public String toString(){
-//		return "Placa:"+ this.placa;
-//	}
 }

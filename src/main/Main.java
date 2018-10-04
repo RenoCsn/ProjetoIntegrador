@@ -82,7 +82,9 @@ public class Main {
 				break;
 			case 4:
 				// gera o roteiro de entrega
-				geraRoteiro(Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o id do motorista que deseja gerar o roteiro")));
+				int idMotoristaRequisitado = Integer.parseInt(
+						JOptionPane.showInputDialog(null, "Digite o id do motorista que deseja gerar o roteiro"));
+				geraRoteiro(idMotoristaRequisitado);
 				break;
 			case 5:
 				int opcaoMenuEntrega = Integer.parseInt(JOptionPane.showInputDialog(null,
@@ -126,12 +128,12 @@ public class Main {
 			for (Motorista motorista : listaMotorista) {
 				if (idMotorista == motorista.getId_motorista()) {
 					motoristaDoRoteiro = motorista;
-					break;
-				}
-				if (motoristaDoRoteiro == null) {
-					JOptionPane.showMessageDialog(null, "Id de motorista não encontrado");
 				}
 			}
+			if (motoristaDoRoteiro == null) {
+				JOptionPane.showMessageDialog(null, "Id de motorista não encontrado");
+			}
+
 		} else {
 			JOptionPane.showMessageDialog(null,
 					"Nenhum motorista cadastrado, por favor cadastre ao menos um motorista!");
