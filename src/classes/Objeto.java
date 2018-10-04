@@ -2,7 +2,7 @@ package classes;
 
 public class Objeto {
 	
-	private int id_objeto;
+	private String id_objeto;
 	private String nome_remetente;
 	private String endereco_remetente;
 	private String none_destinatario;
@@ -15,11 +15,11 @@ public class Objeto {
 		
 	}
 
-	public int getId_objeto() {
+	public String getId_objeto() {
 		return id_objeto;
 	}
 
-	public void setId_objeto(int id_objeto) {
+	public void setId_objeto(String id_objeto) {
 		this.id_objeto = id_objeto;
 	}
 
@@ -70,4 +70,12 @@ public class Objeto {
 	public void setPeso(double peso) {
 		this.peso = peso;
 	}
+
+	@Override
+	public String toString() {
+		return "Objeto [id_objeto=" + id_objeto + ", nome_remetente=" + nome_remetente + ", endereco_remetente="
+				+ endereco_remetente + ", none_destinatario=" + none_destinatario + ", endereco_destinatario="
+				+ endereco_destinatario + ", data_postagem=" + data_postagem + ", peso=" + peso + "]";
+	}
+
 }

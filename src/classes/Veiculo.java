@@ -1,19 +1,9 @@
 package classes;
 
-import java.awt.List;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import javax.swing.JOptionPane;
-
 public class Veiculo {
 	
 	private int id_veiculo;
-	private String tipo;
+	private Short tipo;
 	private String marca;
 	private String modelo;
 	private int ano;
@@ -31,11 +21,11 @@ public class Veiculo {
 		this.id_veiculo = id_veiculo;
 	}
 
-	public String getTipo() {
+	public Short getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(String tipo) {
+	public void setTipo(Short tipo) {
 		this.tipo = tipo;
 	}
 
@@ -70,6 +60,26 @@ public class Veiculo {
 	public void setPlaca(String placa) {
 		this.placa = placa;
 	}
+
+	@Override
+	public String toString() {
+		return "Veiculo [id_veiculo=" + id_veiculo + ", tipo=" + tipo + ", marca=" + marca + ", modelo=" + modelo
+				+ ", ano=" + ano + ", placa=" + placa + "]";
+	}
+
+
+	public Short getCapacidade() {
+
+		if (tipo == 1) {
+			return 1;
+		} else if (tipo == 2) {
+			return 3;
+		} else if (tipo == 3) {
+			return 10;
+		}
+		return 0;
+	}
+
 //	ArrayList<Veiculo> veiculos = new ArrayList();
 //	
 //	public void cadastroVeiculo(Veiculo v) {

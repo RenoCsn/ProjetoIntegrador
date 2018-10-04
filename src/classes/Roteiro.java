@@ -1,59 +1,38 @@
 package classes;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Roteiro {
   
-  private Long codigo;
-  private List<Long> entregasRealizadas = new ArrayList<>();
-  private List<Long> entregasNaoRealizadas = new ArrayList<>();
-  private Date data;
+	private String data;
 
-  private Motorista motorista;
-  private Veiculo veiculo;
-  private List<Encomenda> encomendas = new ArrayList<>();
+	private Motorista motorista;
+	private Veiculo veiculo;
+	List<Objeto> listaObjetos = new ArrayList<>();
 
-  public Roteiro() {
+	public Roteiro() {
   }
 
-  public Roteiro(Long codigo, Date data, Motorista motorista, Veiculo veiculo) {
-    this.codigo = codigo;
+	public Roteiro(String data, Motorista motorista, Veiculo veiculo) {
     this.data = data;
     this.motorista = motorista;
     this.veiculo = veiculo;
   }
 
-  public Long getCodigo() {
-    return codigo;
-  }
+	// public Long getCodigo() {
+	// return codigo;
+	// }
+	//
+	// public void setCodigo(Long codigo) {
+	// this.codigo = codigo;
+	// }
 
-  public void setCodigo(Long codigo) {
-    this.codigo = codigo;
-  }
-
-  public List<Long> getEntregasRealizadas() {
-    return entregasRealizadas;
-  }
-
-  public void setEntregasRealizadas(List<Long> entregasRealizadas) {
-    this.entregasRealizadas = entregasRealizadas;
-  }
-
-  public List<Long> getEntregasNaoRealizadas() {
-    return entregasNaoRealizadas;
-  }
-
-  public void setEntregasNaoRealizadas(List<Long> entregasNaoRealizadas) {
-    this.entregasNaoRealizadas = entregasNaoRealizadas;
-  }
-
-  public Date getData() {
+	public String getData() {
     return data;
   }
 
-  public void setData(Date data) {
+	public void setData(String data) {
     this.data = data;
   }
   
@@ -73,19 +52,21 @@ public class Roteiro {
     this.veiculo = veiculo;
   }
 
-  public List<Encomenda> getEncomendas() {
-    return encomendas;
+	public List<Objeto> getListaObjetos() {
+		return listaObjetos;
+	}
+
+	public void setListaObjetos(List<Objeto> objetosEmRoteiro) {
+		this.listaObjetos = objetosEmRoteiro;
+	}
+
+	public Boolean adicionaObjeto(Objeto objeto) {
+	  
+	  if(getVeiculo() != null && listaObjetos != null && listaObjetos.size() < veiculo.getCapacidade()) {
+		  listaObjetos.add(objeto);
+		  return true;
+	  }
+	  return false;
   }
-
-  public void setEncomendas(List<Encomenda> encomendas) {
-    this.encomendas = encomendas;
-  }
-
-  public void resgistrarEntregaRealizada(Long codigoEntrega) {
-
-  }
-
-  public void resgistrarEntregaNaoRealizada(Long codigo) {
-
-  }
+  
 }
