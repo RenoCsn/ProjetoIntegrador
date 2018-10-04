@@ -49,7 +49,6 @@ public class Main {
 						"Digite o Tipo de cnh: (1 - Van(A) | 2 - Caminhão Baú(B) | 3 - Carreta(C))")));
 				motorista.setNumero_cnh(JOptionPane.showInputDialog(null, " Digite o numero da Cnh do motorista"));
 				listaMotorista.add(motorista);
-				System.out.println(motorista.toString());
 				System.out.println(listaMotorista.toString());
 				idMotorista++;
 				break;
@@ -83,27 +82,27 @@ public class Main {
 				break;
 			case 4:
 				// gera o roteiro de entrega
-				geraRoteiro(idMotorista);
+				geraRoteiro(Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o id do motorista que deseja gerar o roteiro")));
 				break;
 			case 5:
 				int opcaoMenuEntrega = Integer.parseInt(JOptionPane.showInputDialog(null,
 						"Digite o numero da opcao desejada:\n1 - Informar o que foi entregue. \n2 - Informar o que nao foi entregue. \n 3 - Listar o que nao foi entregue."));
-				//informa oq foi entregue
+				// informa oq foi entregue
 				if (opcaoMenuEntrega == 1) {
 					informaEntregue(JOptionPane.showInputDialog(null,
 							"Digite o id do objeto que deseja informar que foi entregue"));
-				// informa oq que nao foi
+					// informa oq que nao foi
 				} else if (opcaoMenuEntrega == 2) {
 					informaNaoEntregue(JOptionPane.showInputDialog(null,
 							"Digite o id do objeto que deseja informar que nao foi entregue"));
-				//lista os nao entregues
+					// lista os nao entregues
 				} else if (opcaoMenuEntrega == 3) {
 					if (listaObjetosNaoEntregues != null && !listaObjetosNaoEntregues.isEmpty()) {
 						System.out.println(listaObjetosNaoEntregues.toString());
 					}
-				}else {
-				JOptionPane.showMessageDialog(null,  "A opcao digitada esta incorreta.");
-			}
+				} else {
+					JOptionPane.showMessageDialog(null, "A opcao digitada esta incorreta.");
+				}
 				break;
 			case 6:
 				// listar os roteiros antigos
@@ -208,14 +207,9 @@ public class Main {
 			JOptionPane.showMessageDialog(null, "Objeto nao encontrado");
 		}
 	}
-	
+
 	private static void listarRoteiros() {
-		Roteiro roteiroListado = null;
-		for(int i = 0; i < listaRoteiro.size(); i++) {
-			roteiroListado = listaRoteiro.get(i);
-			System.out.println(roteiroListado.toString());
-		}
+		System.out.println(listaRoteiro.toString());
 	}
-//	System.out.println(listaRoteiro.toString());
 
 }
