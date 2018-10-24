@@ -6,7 +6,7 @@ public class Motorista {
 	private String nome;
 	private String nascimento;
 	private String endereco;
-	private String tipo_cnh;
+	private Short tipo_cnh;
 	private String numero_cnh;
 	
 //	public Motorista(int id_motorista, String nome, String nascimento, String endereco, char tipo_cnh,
@@ -52,11 +52,11 @@ public class Motorista {
 		this.endereco = endereco;
 	}
 
-	public String getTipo_cnh() {
+	public Short getTipo_cnh() {
 		return tipo_cnh;
 	}
 
-	public void setTipo_cnh(String tipo_cnh) {
+	public void setTipo_cnh(Short tipo_cnh) {
 		this.tipo_cnh = tipo_cnh;
 	}
 
