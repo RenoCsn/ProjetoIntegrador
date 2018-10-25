@@ -20,6 +20,10 @@ public class Motorista {
 //		this.numero_cnh = numero_cnh;
 //	}
 
+	public Motorista() {
+
+	}
+
 	public int getId_motorista() {
 		return id_motorista;
 	}
