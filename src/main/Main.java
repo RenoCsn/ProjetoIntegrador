@@ -92,7 +92,7 @@ public class Main {
 				break;
 			case 4:
 				//gera o roteiro de entrega
-					geraRoteiro(idMotorista);
+					geraRoteiro(Integer.parseInt(JOptionPane.showInputDialog("Digite o Id do motorista desejado")));
 				break;
 			case 5:
 				informaEntregue(JOptionPane.showInputDialog(null, "Digite o id do objeto para informar que foi entregue"));

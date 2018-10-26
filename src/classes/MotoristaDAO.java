@@ -10,6 +10,8 @@ public interface MotoristaDAO {
 
 	List<Motorista> listarMotoristas();
 
+	void alterar(int idMotorista, Motorista motorista);
+
 	Motorista consulta(int idMotorista);
 
 }

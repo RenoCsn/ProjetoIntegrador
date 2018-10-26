@@ -9,16 +9,16 @@ public class Motorista {
 	private Short tipo_cnh;
 	private String numero_cnh;
 	
-//	public Motorista(int id_motorista, String nome, String nascimento, String endereco, char tipo_cnh,
-//			String numero_cnh) {
-//		super();
-//		this.id_motorista = id_motorista;
-//		this.nome = nome;
-//		this.nascimento = nascimento;
-//		this.endereco = endereco;
-//		this.tipo_cnh = tipo_cnh;
-//		this.numero_cnh = numero_cnh;
-//	}
+	public Motorista(int id_motorista, String nome, String nascimento, String endereco, Short tipo_cnh,
+			String numero_cnh) {
+		super();
+		this.id_motorista = id_motorista;
+		this.nome = nome;
+		this.nascimento = nascimento;
+		this.endereco = endereco;
+		this.tipo_cnh = tipo_cnh;
+		this.numero_cnh = numero_cnh;
+	}
 
 	public Motorista() {
 
