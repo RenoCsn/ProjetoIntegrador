@@ -2,12 +2,12 @@ package classes;
 
 public class Objeto {
 	
-	private String id_objeto;
-	private String nome_remetente;
-	private String endereco_remetente;
-	private String none_destinatario;
-	private String endereco_destinatario;
-	private String data_postagem;
+	private int idObjeto;
+	private String nomeRemetente;
+	private String enderecoRemetente;
+	private String nomeDestinatario;
+	private String enderecoDestinatario;
+	private String dataPostagem;
 	private double peso;
 	//private String codigo_localizador;
 	
@@ -15,52 +15,64 @@ public class Objeto {
 		
 	}
 
-	public String getId_objeto() {
-		return id_objeto;
+	public Objeto(int idObjeto, String nomeRemetente, String enderecoRemetente, String nomeDestinatario,
+			String enderecoDestinatario, String dataPostagem, double peso) {
+		super();
+		this.idObjeto = idObjeto;
+		this.nomeRemetente = nomeRemetente;
+		this.enderecoRemetente = enderecoRemetente;
+		this.nomeDestinatario = nomeDestinatario;
+		this.enderecoDestinatario = enderecoDestinatario;
+		this.dataPostagem = dataPostagem;
+		this.peso = peso;
 	}
 
-	public void setId_objeto(String id_objeto) {
-		this.id_objeto = id_objeto;
+	public int getIdObjeto() {
+		return idObjeto;
 	}
 
-	public String getNome_remetente() {
-		return nome_remetente;
+	public void setIdObjeto(int idObjeto) {
+		this.idObjeto = idObjeto;
 	}
 
-	public void setNome_remetente(String nome_remetente) {
-		this.nome_remetente = nome_remetente;
+	public String getNomeRemetente() {
+		return nomeRemetente;
 	}
 
-	public String getEndereco_remetente() {
-		return endereco_remetente;
+	public void setNomeRemetente(String nomeRemetente) {
+		this.nomeRemetente = nomeRemetente;
 	}
 
-	public void setEndereco_remetente(String endereco_remetente) {
-		this.endereco_remetente = endereco_remetente;
+	public String getEnderecoRemetente() {
+		return enderecoRemetente;
 	}
 
-	public String getNone_destinatario() {
-		return none_destinatario;
+	public void setEnderecoRemetente(String enderecoRemetente) {
+		this.enderecoRemetente = enderecoRemetente;
 	}
 
-	public void setNone_destinatario(String none_destinatario) {
-		this.none_destinatario = none_destinatario;
+	public String getNomeDestinatario() {
+		return nomeDestinatario;
 	}
 
-	public String getEndereco_destinatario() {
-		return endereco_destinatario;
+	public void setNomeDestinatario(String nomeDestinatario) {
+		this.nomeDestinatario = nomeDestinatario;
 	}
 
-	public void setEndereco_destinatario(String endereco_destinatario) {
-		this.endereco_destinatario = endereco_destinatario;
+	public String getEnderecoDestinatario() {
+		return enderecoDestinatario;
 	}
 
-	public String getData_postagem() {
-		return data_postagem;
+	public void setEnderecoDestinatario(String enderecoDestinatario) {
+		this.enderecoDestinatario = enderecoDestinatario;
 	}
 
-	public void setData_postagem(String data_postagem) {
-		this.data_postagem = data_postagem;
+	public String getDataPostagem() {
+		return dataPostagem;
+	}
+
+	public void setDataPostagem(String dataPostagem) {
+		this.dataPostagem = dataPostagem;
 	}
 
 	public double getPeso() {
@@ -73,9 +85,9 @@ public class Objeto {
 
 	@Override
 	public String toString() {
-		return "Objeto [id_objeto=" + id_objeto + ", nome_remetente=" + nome_remetente + ", endereco_remetente="
-				+ endereco_remetente + ", none_destinatario=" + none_destinatario + ", endereco_destinatario="
-				+ endereco_destinatario + ", data_postagem=" + data_postagem + ", peso=" + peso + "]";
+		return "Objeto [idObjeto=" + idObjeto + ", nomeRemetente=" + nomeRemetente + ", enderecoRemetente="
+				+ enderecoRemetente + ", nomeDestinatario=" + nomeDestinatario + ", enderecoDestinatario="
+				+ enderecoDestinatario + ", dataPostagem=" + dataPostagem + ", peso=" + peso + "]";
 	}
 
 }

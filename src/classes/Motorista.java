@@ -2,34 +2,34 @@ package classes;
 
 public class Motorista {
 	
-	private int id_motorista;
+	private int idMotorista;
 	private String nome;
 	private String nascimento;
 	private String endereco;
-	private Short tipo_cnh;
-	private String numero_cnh;
+	private Short tipoCnh;
+	private String numeroCnh;
 	
-	public Motorista(int id_motorista, String nome, String nascimento, String endereco, Short tipo_cnh,
-			String numero_cnh) {
+	public Motorista(int id_motorista, String nome, String nascimento, String endereco, Short tipoCnh,
+			String numeroCnh) {
 		super();
-		this.id_motorista = id_motorista;
+		this.idMotorista = id_motorista;
 		this.nome = nome;
 		this.nascimento = nascimento;
 		this.endereco = endereco;
-		this.tipo_cnh = tipo_cnh;
-		this.numero_cnh = numero_cnh;
+		this.tipoCnh = tipoCnh;
+		this.numeroCnh = numeroCnh;
 	}
 
 	public Motorista() {
 
 	}
 
-	public int getId_motorista() {
-		return id_motorista;
+	public int getIdMotorista() {
+		return idMotorista;
 	}
 
-	public void setId_motorista(int id_motorista) {
-		this.id_motorista = id_motorista;
+	public void setIdMotorista(int idMotorista) {
+		this.idMotorista = idMotorista;
 	}
 
 	public String getNome() {
@@ -56,26 +56,26 @@ public class Motorista {
 		this.endereco = endereco;
 	}
 
-	public Short getTipo_cnh() {
-		return tipo_cnh;
+	public Short getTipoCnh() {
+		return tipoCnh;
 	}
 
-	public void setTipo_cnh(Short tipo_cnh) {
-		this.tipo_cnh = tipo_cnh;
+	public void setTipoCnh(Short tipoCnh) {
+		this.tipoCnh = tipoCnh;
 	}
 
-	public String getNumero_cnh() {
-		return numero_cnh;
+	public String getNumeroCnh() {
+		return numeroCnh;
 	}
 
-	public void setNumero_cnh(String numero_cnh) {
-		this.numero_cnh = numero_cnh;
+	public void setNumeroCnh(String numeroCnh) {
+		this.numeroCnh = numeroCnh;
 	}
 
 	@Override
 	public String toString() {
-		return "Motorista [id_motorista=" + id_motorista + ", nome=" + nome + ", nascimento=" + nascimento
-				+ ", endereco=" + endereco + ", tipo_cnh=" + tipo_cnh + ", numero_cnh=" + numero_cnh + "]";
+		return "Motorista [idMotorista=" + idMotorista + ", nome=" + nome + ", nascimento=" + nascimento + ", endereco="
+				+ endereco + ", tipoCnh=" + tipoCnh + ", numeroCnh=" + numeroCnh + "]";
 	}
 
 }

@@ -2,6 +2,9 @@ package main;
 
 import arquivo.ArquivoDaoFactory;
 import classes.MotoristaDAO;
+import classes.ObjetoDAO;
+import classes.RoteiroDAO;
+import classes.VeiculoDAO;
 
 public abstract class DaoFactory {
 
@@ -21,5 +24,11 @@ public abstract class DaoFactory {
 	}
 
 	public abstract MotoristaDAO getMotoristaDao();
+
+	public abstract VeiculoDAO getVeiculoDao();
+
+	public abstract RoteiroDAO getRoteiroDao();
+
+	public abstract ObjetoDAO getObjetoDao();
 
 }

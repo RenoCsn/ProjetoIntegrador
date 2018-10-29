@@ -1,24 +1,34 @@
 package classes;
 
 public class Veiculo {
-	
-	private int id_veiculo;
+
+	private int idVeiculo;
 	private Short tipo;
 	private String marca;
 	private String modelo;
 	private int ano;
 	private String placa;
-	
+
 	public Veiculo() {
-		
+
 	}
 
-	public int getId_veiculo() {
-		return id_veiculo;
+	public Veiculo(int idVeiculo, Short tipo, String marca, String modelo, int ano, String placa) {
+		super();
+		this.idVeiculo = idVeiculo;
+		this.tipo = tipo;
+		this.marca = marca;
+		this.modelo = modelo;
+		this.ano = ano;
+		this.placa = placa;
 	}
 
-	public void setId_veiculo(int id_veiculo) {
-		this.id_veiculo = id_veiculo;
+	public int getIdVeiculo() {
+		return idVeiculo;
+	}
+
+	public void setIdVeiculo(int idVeiculo) {
+		this.idVeiculo = idVeiculo;
 	}
 
 	public Short getTipo() {
@@ -63,10 +73,9 @@ public class Veiculo {
 
 	@Override
 	public String toString() {
-		return "Veiculo [id_veiculo=" + id_veiculo + ", tipo=" + tipo + ", marca=" + marca + ", modelo=" + modelo
+		return "Veiculo [idVeiculo=" + idVeiculo + ", tipo=" + tipo + ", marca=" + marca + ", modelo=" + modelo
 				+ ", ano=" + ano + ", placa=" + placa + "]";
 	}
-
 
 	public Short getCapacidade() {
 
@@ -79,31 +88,4 @@ public class Veiculo {
 		}
 		return 0;
 	}
-
-//	ArrayList<Veiculo> veiculos = new ArrayList();
-//	
-//	public void cadastroVeiculo(Veiculo v) {
-//		
-//		v.setTipo(this.tipo);
-//		v.setPlaca(this.placa);
-//		v.setModelo(this.modelo);
-//		v.setAno(this.ano);
-//		v.setMarca(this.marca);
-//		
-//		veiculos.add(v);
-//		
-//	}
-//	//ARRUMAR BUSCAR VEICULO
-//	/*public ArrayList buscarVeiculo() {
-//		
-//		int n = veiculos.size();
-//		for(int i = 0; i<n; i++) {
-//			JOptionPane.showMessageDialog(null, veiculos.get(i));
-//		}
-//		
-//		return veiculos;
-//	}*/
-//	public String toString(){
-//		return "Placa:"+ this.placa;
-//	}
 }

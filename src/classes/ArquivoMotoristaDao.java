@@ -5,30 +5,30 @@ import java.util.List;
 
 public class ArquivoMotoristaDao implements MotoristaDAO {
 
-	private List<Motorista> motoristas = new ArrayList<>();
+	private List<Motorista> listaMotoristas = new ArrayList<>();
 
 	@Override
 	public void gravar(Motorista motorista) {
-		motoristas.add(motorista);
+		listaMotoristas.add(motorista);
 	}
 
 	@Override
 	public void excluir(int idMotorista) {
-		Motorista motorista = new Motorista();
-		motorista.setId_motorista(idMotorista);
+		int posicao = getPosicaoMotorista(idMotorista);
+		listaMotoristas.remove(posicao);
 		// banco.removerMotorista(motorista);
 	}
 
 	@Override
 	public List<Motorista> listarMotoristas() {
-		return motoristas;
+		return listaMotoristas;
 	}
 
 	@Override
 	public void alterar(int idMotorista, Motorista motorista) {
 		int posicao = getPosicaoMotorista(idMotorista);
 		if (posicao >= 0) {
-			motoristas.set(posicao, motorista);
+			listaMotoristas.set(posicao, motorista);
 		}
 	}
 
@@ -36,15 +36,15 @@ public class ArquivoMotoristaDao implements MotoristaDAO {
 	public Motorista consulta(int idMotorista) {
 		int posicao = getPosicaoMotorista(idMotorista);
 		if (posicao >= 0) {
-			return motoristas.get(posicao);
+			return listaMotoristas.get(posicao);
 		}
 		return null;
 	}
 
 	private int getPosicaoMotorista(int idMotorista) {
 
-		for (int i = 0; i < motoristas.size(); i++) {
-			if (motoristas.get(i).getId_motorista() == idMotorista) {
+		for (int i = 0; i < listaMotoristas.size(); i++) {
+			if (listaMotoristas.get(i).getIdMotorista() == idMotorista) {
 				return i;
 			}
 		}

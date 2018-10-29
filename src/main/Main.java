@@ -46,14 +46,14 @@ public class Main {
 			case 1:
 				//cadastrar o motorista
 				Motorista motorista = new Motorista();
-				motorista.setId_motorista(idMotorista);
+				motorista.setIdMotorista(idMotorista);
 				motorista.setNome(JOptionPane.showInputDialog(null, "Digite o nome do motorista"));;
 				motorista.setNascimento(JOptionPane.showInputDialog(null, "Digite a data de nascimento do motorista"));
 				motorista.setEndereco(JOptionPane.showInputDialog(null, "Digite o endereço do motorista"));
-					motorista.setTipo_cnh(
+					motorista.setTipoCnh(
 							Short.parseShort(JOptionPane.showInputDialog(null,
 									"Digite o Tipo de cnh: (1 - Van(A) | 2 - Caminhão Baú(B) | 3 - Carreta(C))")));
-				motorista.setNumero_cnh(JOptionPane.showInputDialog(null, " Digite o numero da Cnh do motorista"));
+				motorista.setNumeroCnh(JOptionPane.showInputDialog(null, " Digite o numero da Cnh do motorista"));
 				listaMotorista.add(motorista);
 				System.out.println(motorista.toString());
 				System.out.println(listaMotorista.toString());
@@ -62,11 +62,11 @@ public class Main {
 			case 2:
 				//cadastro de veiculo
 				Veiculo veiculo = new Veiculo();
-				veiculo.setId_veiculo(idVeiculo);
+					veiculo.setIdVeiculo(idVeiculo);
 				veiculo.setAno(Integer.parseInt(JOptionPane.showInputDialog("Digite o ano do carro")));
 				veiculo.setMarca(JOptionPane.showInputDialog("Digite a marca"));
 				veiculo.setModelo(JOptionPane.showInputDialog("Digite o modelo"));
-				veiculo.setPlaca(JOptionPane.showInputDialog("Digite o Placa"));
+					veiculo.setPlaca(JOptionPane.showInputDialog("Digite a Placa"));
 				veiculo.setTipo(Short.parseShort(
 							JOptionPane.showInputDialog("Digite o Tipo: (1 - Van | 2 - Caminhão Baú | 3 - Carreta)")));
 				listaVeiculo.add(veiculo);
@@ -78,12 +78,12 @@ public class Main {
 			case 3:
 				//cadastra os objetos
 				Objeto objeto = new Objeto();
-				objeto.setId_objeto(JOptionPane.showInputDialog(null, "Digite o id do objeto"));
-				objeto.setNome_remetente(JOptionPane.showInputDialog(null, "Digite o nome do remetente"));
-				objeto.setEndereco_remetente(JOptionPane.showInputDialog(null, "Digite o endereço do remetente"));
-				objeto.setNone_destinatario(JOptionPane.showInputDialog(null, "Digite o nome do destinatário"));
-				objeto.setEndereco_destinatario(JOptionPane.showInputDialog(null, "Digite o endereço do destinatário"));
-				objeto.setData_postagem(JOptionPane.showInputDialog(null, "Digite a data da postagem"));
+					objeto.setIdObjeto(Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o id do objeto")));
+				objeto.setNomeRemetente(JOptionPane.showInputDialog(null, "Digite o nome do remetente"));
+				objeto.setEnderecoRemetente(JOptionPane.showInputDialog(null, "Digite o endereço do remetente"));
+					objeto.setNomeDestinatario(JOptionPane.showInputDialog(null, "Digite o nome do destinatário"));
+				objeto.setEnderecoDestinatario(JOptionPane.showInputDialog(null, "Digite o endereço do destinatário"));
+				objeto.setDataPostagem(JOptionPane.showInputDialog(null, "Digite a data da postagem"));
 				objeto.setPeso(Double.parseDouble(JOptionPane.showInputDialog(null, "Digite o peso")));
 				listaObjeto.add(objeto);
 					// if (objeto.getId_objeto() != null && !objeto.getId_objeto().trim().equals("")) {
@@ -95,7 +95,8 @@ public class Main {
 					geraRoteiro(Integer.parseInt(JOptionPane.showInputDialog("Digite o Id do motorista desejado")));
 				break;
 			case 5:
-				informaEntregue(JOptionPane.showInputDialog(null, "Digite o id do objeto para informar que foi entregue"));
+					informaEntregue(Integer.parseInt((JOptionPane.showInputDialog(null,
+							"Digite o id do objeto para informar que foi entregue"))));
 					// informa oq que nao foi
 
 				if (listaObjetosNaoEntregues != null && !listaObjetosNaoEntregues.isEmpty()) {
@@ -122,7 +123,7 @@ public class Main {
 		Motorista motoristaDoRoteiro = null;
 		if (listaMotorista != null && !listaMotorista.isEmpty()) {
 			for (Motorista motorista : listaMotorista) {
-				if (idMotorista == motorista.getId_motorista()) {
+				if (idMotorista == motorista.getIdMotorista()) {
 					motoristaDoRoteiro = motorista;
 					break;
 				}
@@ -146,41 +147,42 @@ public class Main {
 			JOptionPane.showMessageDialog(null, "Nenhum veiculo cadastrado, por favor cadastre ao menos um veiculo!");
 			return;
 		}
-		roteiro.setMotorista(motoristaDoRoteiro);
-		roteiro.setVeiculo(veiculoDoRoteiro);
+		roteiro.setIdMotorista(motoristaDoRoteiro.getIdMotorista());
+		roteiro.setIdVeiculo(veiculoDoRoteiro.getIdVeiculo());
 		Objeto objetoEmRoteiro = null;
 		if (listaObjetosNaoEntregues != null && !listaObjetosNaoEntregues.isEmpty()) {
 			for (int i = 0; i < listaObjetosNaoEntregues.size(); i++) {
 				objetoEmRoteiro = listaObjetosNaoEntregues.get(i);
-				if (!roteiro.adicionaObjeto(objetoEmRoteiro)) {
+				if (!roteiro.adicionaObjeto(objetoEmRoteiro.getIdObjeto(), veiculoDoRoteiro.getCapacidade())) {
 					JOptionPane.showMessageDialog(null, "Veiculo com capacidade esgotada");
 				}
 			}
 		} else if (listaObjeto != null && !listaObjeto.isEmpty()) {
 			for (int i = 0; i < listaObjeto.size(); i++) {
 				objetoEmRoteiro = listaObjeto.get(i);
-				if (!roteiro.adicionaObjeto(objetoEmRoteiro)) {
+				if (!roteiro.adicionaObjeto(objetoEmRoteiro.getIdObjeto(), veiculoDoRoteiro.getCapacidade())) {
 					JOptionPane.showMessageDialog(null, "Veiculo com capacidade esgotada");
 				}
 			}
 		}
 		roteiro.setData(JOptionPane.showInputDialog(null, "Digite a data para o roteiro desejado"));
 		listaRoteiro.add(roteiro);
+		System.out.println(roteiro.toString());
+		System.out.println(listaRoteiro);
 	}
 
 	private static Boolean motoristaApto(Motorista motoristaDoRoteiro, Veiculo veiculo) {
 
-		if (motoristaDoRoteiro.getTipo_cnh() >= veiculo.getTipo()) {
+		if (motoristaDoRoteiro.getTipoCnh() >= veiculo.getTipo()) {
 			return true;
 		}
 		return false;
 	}
 
-	private static void informaEntregue(String idObjeto) {
+	private static void informaEntregue(int idObjeto) {
 		Objeto objetoEntregue = null;
 		for(Objeto objeto : listaObjeto) {
-			System.out.println("aqui");
-			if (objeto.getId_objeto().equalsIgnoreCase(idObjeto)) {
+			if (objeto.getIdObjeto() == idObjeto) {
 				objetoEntregue = objeto;
 				listaObjetosEntregues.add(objetoEntregue);
 				listaObjeto.remove(objetoEntregue);

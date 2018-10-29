@@ -4,69 +4,79 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Roteiro {
-  
-	private String data;
 
-	private Motorista motorista;
-	private Veiculo veiculo;
-	List<Objeto> listaObjetos = new ArrayList<>();
+	private String data;
+	private int idRoteiro;
+	private int idMotorista;
+	private int idVeiculo;
+	List<Integer> listaIdObjetos = new ArrayList<>();
 
 	public Roteiro() {
-  }
+	}
 
-	public Roteiro(String data, Motorista motorista, Veiculo veiculo) {
-    this.data = data;
-    this.motorista = motorista;
-    this.veiculo = veiculo;
-  }
-
-	// public Long getCodigo() {
-	// return codigo;
-	// }
-	//
-	// public void setCodigo(Long codigo) {
-	// this.codigo = codigo;
-	// }
+	public Roteiro(String data, int idRoteiro, int idMotorista, int idVeiculo, List<Integer> listaIdObjetos) {
+		super();
+		this.data = data;
+		this.idRoteiro = idRoteiro;
+		this.idMotorista = idMotorista;
+		this.idVeiculo = idVeiculo;
+		this.listaIdObjetos = listaIdObjetos;
+	}
 
 	public String getData() {
-    return data;
-  }
+		return data;
+	}
 
 	public void setData(String data) {
-    this.data = data;
-  }
-  
-  public Motorista getMotorista() {
-    return motorista;
-  }
-
-  public void setMotorista(Motorista motorista) {
-    this.motorista = motorista;
-  }
-
-  public Veiculo getVeiculo() {
-    return veiculo;
-  }
-
-  public void setVeiculo(Veiculo veiculo) {
-    this.veiculo = veiculo;
-  }
-
-	public List<Objeto> getListaObjetos() {
-		return listaObjetos;
+		this.data = data;
 	}
 
-	public void setListaObjetos(List<Objeto> objetosEmRoteiro) {
-		this.listaObjetos = objetosEmRoteiro;
+	public int getIdRoteiro() {
+		return idRoteiro;
 	}
 
-	public Boolean adicionaObjeto(Objeto objeto) {
-	  
-	  if(getVeiculo() != null && listaObjetos != null && listaObjetos.size() < veiculo.getCapacidade()) {
-		  listaObjetos.add(objeto);
-		  return true;
-	  }
-	  return false;
-  }
-  
+	public void setIdRoteiro(int idRoteiro) {
+		this.idRoteiro = idRoteiro;
+	}
+
+	public int getIdMotorista() {
+		return idMotorista;
+	}
+
+	public void setIdMotorista(int idMotorista) {
+		this.idMotorista = idMotorista;
+	}
+
+	public int getIdVeiculo() {
+		return idVeiculo;
+	}
+
+	public void setIdVeiculo(int idVeiculo) {
+		this.idVeiculo = idVeiculo;
+	}
+
+	public List<Integer> getListaIdObjetos() {
+		return listaIdObjetos;
+	}
+
+	public void setListaIdObjetos(List<Integer> listaIdObjetos) {
+		this.listaIdObjetos = listaIdObjetos;
+	}
+
+	public Boolean adicionaObjeto(int idObjeto, int capacidade) {
+
+		if (getIdVeiculo() >= 0 && listaIdObjetos != null && listaIdObjetos.size() < capacidade) {
+			listaIdObjetos.add(idObjeto);
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public String toString() {
+		return "Roteiro [data=" + data + ", idRoteiro=" + idRoteiro + ", idMotorista=" + idMotorista + ", idVeiculo="
+				+ idVeiculo + ", listaIdObjetos=" + listaIdObjetos + "]";
+	}
+
+
 }
